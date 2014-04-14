@@ -1,0 +1,11 @@
+<%= link_to "Back to index", products_url %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited your registration </h2>
+        <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %> </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
