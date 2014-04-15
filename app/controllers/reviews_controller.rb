@@ -1,11 +1,13 @@
 class ReviewsController < ApplicationController
-  before_filter :load_product
+  before_filter :ensure_logged_in, :only =>[:edit, :create, :show, :update, :destroy]
+
 
   def show
     @review = Review.find(params[:id])
   end
 
   def create
+    @product = Product.find(params[:product_id])
     @review = @product.reviews.build(review_params)
     @review.user_id = current_user.id
 

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'reviews/show'
+  # get 'reviews/show'
 
-  get 'reviews/new'
+  # get 'reviews/new'
 
-  get 'reviews/edit'
+  # get 'reviews/edit'
 
   root 'products#index'
 

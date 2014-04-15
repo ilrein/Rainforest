@@ -1,4 +1,18 @@
 <% if current_user %>
+  <h3>Reviews</h3>
+    <p>Reviews for <%=@product.name%></p>
+      <% @product.reviews.each do |x| %>
+        <p>
+          <%= x.comment %>
+            <br>
+            <% if x.user != nil %>
+              <em> by <%= x.user.email %> </em><br>
+              Added on: <%= x.created_at %>
+            <% end %> 
+        </p>
+      <% end %>        
+<% end %>
+<% if current_user %>
 
   <h4>New Review</h4>
 

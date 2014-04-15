@@ -1,6 +1,19 @@
 @import 'bootstrap';
 
 body {
-    padding-top: 50px; 
+    padding-top: 70px; 
+}
+
+li {
+	display:inline;
+}
+
+.brand {
+	float: left;
+}
+
+.userinfo {
+	padding-top: 10px;
+	float: right;
 }
 
