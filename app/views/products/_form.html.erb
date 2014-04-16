@@ -1,16 +1,27 @@
-<%= link_to "Back to index", products_url %>
   <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved </h2>
-        <ul>
-        <% @product.errors.full_messages.each do |msg| %>
-          <li><%= msg %> </li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
+  <div id="error_explanation">
+    <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved </h2>
+    <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+      <li><%= msg %> </li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <div class="container">
     <%= form_for @product do |f| %>
+
+    <p>Category</p>
+    <select>
+      <option value="Electronics">Electronics</option>
+      <option value="HomeNGarden">Home and Garden</option>
+      <option value="Books">Books</option>
+      <option value="Toys">Toys</option>
+    </select>
+
+   
+    
+
     <p>
       <%= f.label :name %><br>
       <%= f.text_field :name %>
@@ -23,9 +34,12 @@
       <%= f.label :price_in_cents %><br>
       <%= f.text_field :price_in_cents %>
     </p>
+
     <p>
       <div class="actions">
         <%= f.submit %> 
       </p>
     </div>
-    <% end %>
+  </div>
+</div>
+<% end %>

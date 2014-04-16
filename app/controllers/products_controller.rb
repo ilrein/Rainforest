@@ -12,22 +12,22 @@ class ProductsController < ApplicationController
     end
   end
 
-  def new
-  	@product = Product.new
-  end
+    def new
+     @product = Product.new
+   end
 
-  def edit
-  	@product = Product.find(params[:id])
-  end
+   def edit
+     @product = Product.find(params[:id])
+   end
 
-  def create
-  	@product = Product.new(product_params)
+   def create
+     @product = Product.new(product_params)
 
-  	if @product.save
-  		redirect_to @product
-  	else
-  		render :new
-  	end
+     if @product.save
+      redirect_to @product
+    else
+      render :new
+    end
   end
 
   def update

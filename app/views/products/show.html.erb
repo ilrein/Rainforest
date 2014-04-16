@@ -1,8 +1,9 @@
 <% if current_user %>
+
   <h3>Reviews</h3>
-    <p>Reviews for <%=@product.name%></p>
+    <p>Reviews for <%=@product.name%></p> 
       <% @product.reviews.each do |x| %>
-        <p>
+        <p> 
           <%= x.comment %>
             <br>
             <% if x.user != nil %>

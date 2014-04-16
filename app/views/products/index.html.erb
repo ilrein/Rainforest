@@ -1,1 +1,8 @@
-
+<% if current_user %>
+  <h3>Products</h3>
+    <p><% @products.each do |x| %></p>
+     	<%= link_to "#{x.name}", product_path(x) %>
+     	<% end %>
+     	
+           
+<% end %>
